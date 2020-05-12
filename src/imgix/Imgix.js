@@ -24,8 +24,7 @@ export default class Imgix {
   }
 
   static resolveTag (path, params = {}, tag = 'default') {
-    const endpoint = Imgix.getEndpoint(tag)
-    return endpoint.resolve(path, params)
+    return Imgix.getEndpoint(tag).resolve(path, params)
   }
 
   static getEndpoint (tag) {
