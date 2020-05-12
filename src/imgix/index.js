@@ -6,7 +6,7 @@ export default {
 
     Vue.prototype.$imgix = new Proxy(Imgix, {
       apply (target, thisArg, argumentsList) {
-        target.resolveTag.apply(target, argumentsList)
+        return target.resolveTag.apply(target, argumentsList)
       },
       get (target, tag) {
         const endpoint = target.getEndpoint(tag)
