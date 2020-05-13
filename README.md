@@ -10,7 +10,7 @@ Vue.use(Imgix, config)
 ```
 
 Where `config` is an object with imgix endpoints like this:
-```json
+```js
 {
     "default": {
         "url": "https://some-namespace.imgix.net/",
