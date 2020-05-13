@@ -36,7 +36,7 @@ An `$imgix` method will be exposed on the Vue prototype.
 **$imgix**[.*endpoint*](*image*, *options*)
  - **endpoint**: Any endpoint in the configuration. If omitted, `default` endpoint will be used.
  - **image**: The relative image url.
- - **options**: [Imgix Url API options](https://docs.imgix.com/apis/url).
+ - **options**: [Imgix Url API options](https://docs.imgix.com/apis/url). This will be merged with the `defaults` from the endpoint configuration.
 
  
 ### Examples
