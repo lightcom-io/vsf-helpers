@@ -1,4 +1,5 @@
 import queryString from 'query-string'
+import isNumeric from '../utils'
 
 export default class Imgix {
   constructor (url, defaults = {}) {
@@ -10,9 +11,11 @@ export default class Imgix {
   }
 
   resolve (path, params = {}) {
+    if (!path && !isNumeric(path)) return null
+
     const query = queryString.stringify(this.getParams(params))
 
-    return `${this.url}${path}` + (query ? `?${query}` : '')
+    return (`${this.url}${path}` + (query ? `?${query}` : '')).replace(/\/{2,}/g, '/')
   }
 
   static setupEndpoints (config) {
