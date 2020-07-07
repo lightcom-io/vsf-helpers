@@ -1,5 +1,5 @@
 import queryString from 'query-string'
-import isNumeric from '../utils'
+import { isNumeric } from '../utils'
 
 export default class Imgix {
   constructor (url, defaults = {}) {
