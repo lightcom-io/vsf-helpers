@@ -1,3 +1,5 @@
+#0.1.2
+ - Imgix: Fixed issue with url cleanup
 #0.1.1
  - This changelog
 #0.1.0

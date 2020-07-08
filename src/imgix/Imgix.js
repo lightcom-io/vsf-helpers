@@ -1,5 +1,8 @@
 import queryString from 'query-string'
-import { isNumeric } from '../utils'
+import {
+  isNumeric,
+  cleanUrl
+} from '../utils'
 
 export default class Imgix {
   constructor (url, defaults = {}) {
@@ -15,7 +18,7 @@ export default class Imgix {
 
     const query = queryString.stringify(this.getParams(params))
 
-    return (`${this.url}${path}` + (query ? `?${query}` : '')).replace(/\/{2,}/g, '/')
+    return cleanUrl(`${this.url}${path}` + (query ? `?${query}` : ''))
   }
 
   static setupEndpoints (config) {
